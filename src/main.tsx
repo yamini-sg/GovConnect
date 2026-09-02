@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App.tsx'
 import { AppDataProvider } from './context/AppDataContext.tsx'
 import { LanguageProvider } from './context/LanguageContext.tsx'
+// @ts-expect-error CSS is loaded by the bundler and has no TypeScript declarations.
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
