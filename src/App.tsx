@@ -15,7 +15,7 @@ import { GrievanceDetail } from './pages/GrievanceDetail'
 import { Profile } from './pages/Profile'
 
 export default function App() {
-  const [authed, setAuthed] = useState(true)
+  const [authed, setAuthed] = useState<boolean>(true)
 
   if (!authed) {
     return <Login onComplete={() => setAuthed(true)} />
@@ -38,6 +38,8 @@ export default function App() {
         <Route path="/grievances" element={<Grievances />} />
         <Route path="/grievances/:id" element={<GrievanceDetail />} />
         <Route path="/profile" element={<Profile />} />
+        
+        {/* Catch-all route to redirect invalid URLs back to home */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </AppShell>
